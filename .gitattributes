@@ -1,0 +1,10 @@
+# Normalize line endings for cross-platform contributors.
+* text=auto eol=lf
+
+# Binary assets — never touch
+*.png binary
+*.jpg binary
+*.icns binary
+*.ico binary
+*.dmg binary
+*.zip binary

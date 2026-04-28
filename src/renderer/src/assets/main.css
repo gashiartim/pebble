@@ -1,0 +1,140 @@
+:root {
+  --pebble-bg: rgba(20, 22, 28, 0.92);
+  --pebble-fg: #f5f5f7;
+  --pebble-accent: #4f9bff;
+  --pebble-danger: #ff5577;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent;
+  color: var(--pebble-fg);
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#root { height: 100%; width: 100%; }
+
+/* ---------- Panel window (small floating card) ---------- */
+.panel-root {
+  height: 100%;
+  width: 100%;
+  background: var(--pebble-bg);
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.drag-region {
+  -webkit-app-region: drag;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 18px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  -webkit-app-region: no-drag;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  cursor: pointer;
+}
+.link:hover { color: white; }
+
+.error {
+  font-size: 11px;
+  color: var(--pebble-danger);
+  padding: 4px 8px;
+  white-space: pre-wrap;
+  max-height: 40px;
+  overflow: auto;
+}
+
+/* ---------- Polish ---------- */
+.polish-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+.preset-row { -webkit-app-region: no-drag; }
+
+.preset-select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--pebble-fg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='white' opacity='0.55'><path d='M1 1l5 5 5-5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 7px;
+  padding-right: 28px;
+}
+.preset-select:hover { background-color: rgba(255, 255, 255, 0.08); }
+.preset-select:focus { border-color: var(--pebble-accent); }
+.preset-select option { background: #1a1d24; color: var(--pebble-fg); }
+
+.polish-textarea {
+  -webkit-app-region: no-drag;
+  flex: 1;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--pebble-fg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  outline: none;
+  font-family: inherit;
+  min-height: 0;
+}
+.polish-textarea::placeholder { color: rgba(255, 255, 255, 0.35); }
+.polish-textarea:focus { border-color: var(--pebble-accent); background: rgba(255, 255, 255, 0.08); }
+
+.polish-button {
+  -webkit-app-region: no-drag;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.08s;
+}
+.polish-button:hover:not(:disabled) { filter: brightness(1.1); }
+.polish-button:active:not(:disabled) { transform: scale(0.99); }
+.polish-button:disabled { opacity: 0.55; cursor: not-allowed; }
+.polish-button.working { background: linear-gradient(135deg, #4f9bff 0%, #6fc1ff 100%); }
+.polish-button.done { background: linear-gradient(135deg, #44cc88 0%, #66dd99 100%); }
+.polish-button.error { background: linear-gradient(135deg, #aa3344 0%, #cc5566 100%); }
