@@ -31,7 +31,7 @@ Nothing leaves your machine. No accounts, no telemetry, no cloud API.
 ## Install (from source)
 
 ```bash
-git clone https://github.com/artimgashi/pebble.git
+git clone https://github.com/gashiartim/pebble.git
 cd pebble
 npm install
 cp .env.example .env

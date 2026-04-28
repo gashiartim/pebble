@@ -9,13 +9,13 @@
     "url": "https://artimgashi.dev"
   },
   "license": "MIT",
-  "homepage": "https://github.com/artimgashi/pebble",
+  "homepage": "https://github.com/gashiartim/pebble",
   "repository": {
     "type": "git",
-    "url": "https://github.com/artimgashi/pebble.git"
+    "url": "https://github.com/gashiartim/pebble.git"
   },
   "bugs": {
-    "url": "https://github.com/artimgashi/pebble/issues"
+    "url": "https://github.com/gashiartim/pebble/issues"
   },
   "keywords": [
     "ollama",
