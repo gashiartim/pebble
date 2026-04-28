@@ -8,7 +8,7 @@ Pebble is a single-user local tool with no server, no auth, and no remote attack
 
 If you find a security issue (e.g. a way for a malicious clipboard payload to escape the renderer sandbox, an Ollama-host SSRF, a privilege escalation through the global shortcut, etc.), please **do not open a public GitHub issue**. Email me directly:
 
-**hi@artimgashi.dev**
+**artimgashi.dev@gmail.com**
 
 Include:
 
