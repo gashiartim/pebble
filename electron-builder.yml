@@ -21,10 +21,11 @@ nsis:
 mac:
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
-    - NSCameraUsageDescription: Application requests access to the device's camera.
-    - NSMicrophoneUsageDescription: Application requests access to the device's microphone.
-    - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
-    - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
+    # LSUIElement hides the app from the dock and the Cmd+Tab switcher.
+    # It must be baked into Info.plist at build time — calling
+    # setActivationPolicy('accessory') from JS happens too late, so the app
+    # briefly appears in Cmd+Tab on first launch even with that runtime call.
+    - LSUIElement: true
   # Personal/dev build — no Apple Developer ID. `identity: null` tells
   # electron-builder to ad-hoc sign every binary in the bundle with the
   # same identity, which prevents the "Team IDs differ" dyld crash on

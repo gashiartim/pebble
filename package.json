@@ -1,6 +1,6 @@
 {
   "name": "pebble",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Menu-bar text-polish tool that rewrites your clipboard with a local Ollama model. One global shortcut, seven presets, no cloud.",
   "main": "./out/main/index.js",
   "author": {

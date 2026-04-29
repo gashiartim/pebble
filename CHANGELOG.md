@@ -2,6 +2,12 @@
 
 All notable changes to Pebble are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] — 2026-04-29
+
+### Fixed
+
+- Pebble no longer appears in the macOS Cmd+Tab application switcher or the dock. `LSUIElement: true` is now baked into `Info.plist` at build time; the runtime `setActivationPolicy('accessory')` call alone applied too late and let the app slip into the switcher on launch.
+
 ## [1.0.0] — 2026-04-28
 
 First public release.
