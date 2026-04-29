@@ -107,6 +107,7 @@ Click the menu-bar icon to open the panel. Pick a preset from the dropdown, past
 | **Friendly** | Casual, warm — Slack / team |
 | **Fix typos only** | Minimal change, preserves voice |
 | **Bullets** | Rewrite as a bullet list |
+| **Translate (EN ↔ SQ)** | Auto-flip between English and Albanian |
 | **Prompt enhance** | Sharpen a vague LLM prompt |
 
 Adding your own preset is one append to `src/main/presets.ts` — see [CONTRIBUTING.md](CONTRIBUTING.md).

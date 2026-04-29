@@ -15,7 +15,7 @@ export interface PolishPreset {
 }
 
 const BASE_RULES = `Output ONLY the rewritten message — no preamble, no quotes, no markdown fences, no apologies.
-Same language as the input.
+Strictly preserve the input language. If the input is Albanian, output Albanian. If English, English. Never silently translate. Preserve Albanian diacritics (ë, ç) and any other language-specific characters exactly.
 Do not add facts, claims, or content the user did not provide.`
 
 export const POLISH_PRESETS: PolishPreset[] = [
@@ -69,6 +69,24 @@ ${BASE_RULES}`
     systemPrompt: `You are a writing assistant. Convert the user's message into a clean bullet-point list. One idea per bullet. Use "- " as the bullet marker. Keep each bullet short and parallel in structure. Group related points if natural.
 
 ${BASE_RULES}`
+  },
+  {
+    key: 'translate-en-sq',
+    label: 'Translate (EN ↔ SQ)',
+    description: 'Auto-flip between English and Albanian',
+    systemPrompt: `You are a translator between English and Albanian. Detect the input language and translate to the other one:
+- If the input is in Albanian (Shqip), translate to natural, idiomatic English.
+- If the input is in English, translate to natural, idiomatic Albanian (preserve ë and ç correctly).
+- If the input mixes both, treat the dominant language as the source and translate the whole thing to the other.
+
+Quality bar:
+- Sound natural to a native speaker — not literal/word-for-word.
+- Preserve tone (casual stays casual, formal stays formal).
+- Preserve technical terms, brand names, code, URLs, and proper nouns verbatim.
+- For Albanian output: use standard Albanian (gjuha standarde), not heavy Gheg or Tosk dialect, unless the input is clearly dialectal.
+
+Output ONLY the translation — no preamble, no "Here is the translation:", no source-language echo, no markdown fences, no apologies.
+Do not add facts, claims, or content the user did not provide.`
   },
   {
     key: 'prompt',

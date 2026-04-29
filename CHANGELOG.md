@@ -2,6 +2,16 @@
 
 All notable changes to Pebble are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] — 2026-04-29
+
+### Added
+
+- **Translate preset (EN ↔ SQ)** — auto-detects source language and translates between English and Albanian. Aware of Albanian diacritics (ë, ç) and standard Albanian register.
+
+### Changed
+
+- All presets now preserve the input language strictly. Pasting Albanian no longer drifts toward English. Diacritics are preserved exactly.
+
 ## [1.0.1] — 2026-04-29
 
 ### Fixed
